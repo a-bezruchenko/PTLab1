@@ -2,6 +2,7 @@ from Types import DataType
 from DataReader import DataReader
 import json
 
+
 class JsonDataReader(DataReader):
     def read(self, path: str) -> DataType:
         file_text : str
