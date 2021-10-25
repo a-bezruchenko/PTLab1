@@ -7,7 +7,7 @@ from JsonDataReader import JsonDataReader
 class TestJsonDataReader:
     @pytest.fixture()
     def file_and_data_content(self) -> Tuple[str, DataType]:
-        text ="""{
+        text = """{
     "Иванов Константин Дмитриевич" : {
             "математика": 91, "химия":100
     },
@@ -15,7 +15,6 @@ class TestJsonDataReader:
             "русский язык":87, "литература":78
     }
 }"""
-       
         data = {
             "Иванов Константин Дмитриевич": [
                 ("математика", 91), ("химия", 100)
