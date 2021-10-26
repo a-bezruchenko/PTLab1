@@ -10,7 +10,6 @@ class CalcRating():
         self.rating: RatingType = {}
 
     def calc(self) -> RatingType:
-        return 0
         for key in self.data:
             self.rating[key] = 0.0
             for subject in self.data[key]:
