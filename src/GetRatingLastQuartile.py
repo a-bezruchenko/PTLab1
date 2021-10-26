@@ -14,7 +14,7 @@ class GetRatingLastQuartile():
             ratings.sort()  # ascending
             f_values: List[float] = [i/(length-1) for i in range(length)]
             lower: int = 0
-            upper: int = 0
+            upper: int = length-1
             for i in range(length):
                 if f_values[i] > 0.75:
                     upper = i
