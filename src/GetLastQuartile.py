@@ -4,9 +4,8 @@ RatingType = Dict[str, float]
 
 
 class GetLastRatingQuartile():
-    def calc(self, students_rating: RatingType) -> float:
-        ratings: List[float] = [students_rating[x]
-                                    for x in students_rating]
+    def calc(self, input_ratings: RatingType) -> float:
+        ratings: List[float] = [input_ratings[x] for x in input_ratings]
         length: int = len(ratings)
         if length % 4 == 0:
             ratings.sort(reverse=True)  # descending
