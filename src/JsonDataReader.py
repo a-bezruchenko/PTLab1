@@ -1,4 +1,5 @@
 from Types import DataType
+from typing import Dict, List, Tuple
 from DataReader import DataReader
 import json
 
@@ -6,7 +7,7 @@ import json
 class JsonDataReader(DataReader):
     def read(self, path: str) -> DataType:
         file_text: str
-        parsed: DataType
+        parsed: Dict[str, Dict[str, int]]
         result: DataType
         with open(path, "r", encoding="utf-8") as file:
             file_text = file.read()
