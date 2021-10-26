@@ -25,5 +25,5 @@ class GetRatingLastQuartile():
             diff_75: float = 0.75 - f_values[lower]
             ratio: float = diff_75 / diff_f_values
             diff_values: float = ratings[upper] - ratings[lower]
-            quartile: float = ratings[upper] + diff_values * ratio
+            quartile: float = ratings[lower] + diff_values * ratio
             return quartile
