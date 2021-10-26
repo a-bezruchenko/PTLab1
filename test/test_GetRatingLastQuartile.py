@@ -1,6 +1,6 @@
 from typing import Dict, Tuple, List
 from Types import DataType
-from GetLastRatingQuartile import GetLastRatingQuartile
+from GetRatingLastQuartile import GetRatingLastQuartile
 import pytest
 
 
@@ -22,5 +22,5 @@ class TestCalcRating():
             rating: RatingsType
             expected_quartile: float
             rating, expected_quartile = test_case
-            quartile: float = GetLastRatingQuartile().calc(rating)
+            quartile: float = GetRatingLastQuartile().calc(rating)
             assert pytest.approx(quartile, abs=0.001) == expected_quartile
