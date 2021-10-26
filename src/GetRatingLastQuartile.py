@@ -3,7 +3,7 @@ from typing import Dict, List
 RatingType = Dict[str, float]
 
 
-class GetLastRatingQuartile():
+class GetRatingLastQuartile():
     def calc(self, input_ratings: RatingType) -> float:
         ratings: List[float] = [input_ratings[x] for x in input_ratings]
         length: int = len(ratings)
