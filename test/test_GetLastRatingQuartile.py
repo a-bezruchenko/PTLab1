@@ -24,4 +24,3 @@ class TestCalcRating():
             rating, expected_quartile = test_case
             quartile: float = GetLastRatingQuartile().calc(rating)
             assert pytest.approx(quartile, abs=0.001) == expected_quartile
-
