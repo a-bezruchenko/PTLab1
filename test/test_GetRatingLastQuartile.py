@@ -9,7 +9,7 @@ RatingsType = Dict[str, float]
 
 class TestCalcRating():
     @pytest.fixture()
-    def input_data(self) -> List[Tuple[RatingsType, float]]:
+    def test_cases(self) -> List[Tuple[RatingsType, float]]:
         test_cases: List[Tuple[RatingsType, float]] = [
             ({"a": 1, "b": 2, "c": 3, "d": 4}, 3),
             ({"a": 1, "b": 2}, 1.75)
