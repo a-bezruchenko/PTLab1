@@ -12,12 +12,11 @@ class GetLastRatingQuartile():
             return ratings[length//4]
         else:
             ratings.sort()  # ascending
-            length: int = len(ratings)
             f_values: List[float] = [i/(length-1) for i in range(length)]
-            lower: float = f_values[0]
-            upper: float = f_values[0]
+            lower: int = 0
+            upper: int = 0
             for i in range(length):
-                if f_value_list[i] > 0.75:
+                if f_values[i] > 0.75:
                     upper = i
                     break
                 else:
