@@ -13,10 +13,10 @@ TestCases = List[Tuple[RatingsType, float]]
 
 class TestCalcRating():
     @pytest.fixture()
-    def test_cases(self) -> List[Tuple[RatingsType, float]]:
+    def test_cases(self) -> TestCases:
         test_cases: List[Tuple[RatingsType, float]] = [
-            ({"a": 1, "b": 2, "c": 3, "d": 4}, 3),
-            ({"a": 1, "b": 2}, 1.75)
+            ({"a": 1, "b": 2, "c": 3, "d": 4}, 3, 'd'),
+            ({"a": 1, "b": 2}, 1.75, 'b')
             ]
         return test_cases
 
@@ -24,7 +24,7 @@ class TestCalcRating():
         for test_case in test_cases:
             rating: RatingsType
             expected_quartile: float
-            rating, expected_quartile = test_case
+            rating, expected_quartile = test_case[0], test_case[1]
             quartil: float = GetRatingLastQuartile().calc_last_quartile(rating)
             assert pytest.approx(quartil, abs=0.001) == expected_quartile
 
@@ -32,11 +32,11 @@ class TestCalcRating():
         for test_case in test_cases:
             rating: RatingsType
             expected_quartile: float
-            rating, expected_quartile = test_case
+            rating, expected_students = test_case[0], test_case[2]
             old_stdout = sys.stdout
             mystdout = StringIO()
             sys.stdout = mystdout
             GetRatingLastQuartile().print_last_quartile_students(rating)
             sys.stdout = old_stdout
             output = mystdout.getvalue()
-            assert output == "d\n"
+            assert output == expected_students + "\n"
