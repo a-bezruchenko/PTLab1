@@ -1,10 +1,16 @@
-from typing import Dict, List
+from typing import Dict, List, Callable
 
 RatingType = Dict[str, float]
 
 
 class GetRatingLastQuartile():
-    def calc(self, input_ratings: RatingType) -> float:
+    def print_last_quartile_students(self, input_ratings: RatingType):
+        quartile: float = self.calc_last_quartile(input_ratings)
+        filtered_students: RatingType = {k:input_ratings[k] for k in input_ratings if input_ratings[k] > quartile}
+        for k in filtered_students:
+            print(k)
+
+    def calc_last_quartile(self, input_ratings: RatingType) -> float:
         ratings: List[float] = [input_ratings[x] for x in input_ratings]
         length: int = len(ratings)
         if length % 4 == 0:
