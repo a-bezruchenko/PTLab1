@@ -4,7 +4,7 @@ RatingT = Dict[str, float]
 
 
 class GetRatingLastQuartile():
-    def print_last_quartile_students(self, ratings: RatingT):
+    def print_last_quartile_students(self, ratings: RatingT) -> None:
         quartile: float = self.calc_last_quartile(ratings)
         filtered_students: RatingT = self._filter_students(ratings, quartile)
         for k in filtered_students:
