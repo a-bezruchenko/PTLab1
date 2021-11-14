@@ -37,7 +37,6 @@ class TestCalcRating():
             mystdout = StringIO()
             sys.stdout = mystdout
             GetRatingLastQuartile().print_last_quartile_students(rating)
-
             sys.stdout = old_stdout
-            output = mystdout.getvalue(0)
+            output = mystdout.getvalue()
             assert output == "d"
