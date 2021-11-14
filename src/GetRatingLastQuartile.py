@@ -4,9 +4,10 @@ RatingType = Dict[str, float]
 
 
 class GetRatingLastQuartile():
-    def print_last_quartile_students(self, input_ratings: RatingType):
-        quartile: float = self.calc_last_quartile(input_ratings)
-        filtered_students: RatingType = {k:input_ratings[k] for k in input_ratings if input_ratings[k] > quartile}
+    def print_last_quartile_students(self, ratings: RatingType):
+        quartile: float = self.calc_last_quartile(ratings)
+        filtered_students: RatingType = {k: ratings[k] for k in ratings
+            if ratings[k] > quartile}
         for k in filtered_students:
             print(k)
 

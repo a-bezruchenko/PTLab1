@@ -19,17 +19,15 @@ class TestCalcRating():
             ]
         return test_cases
 
-    def test_calc_last_quartile(self, test_cases:
-                  List[Tuple[RatingsType, float]]) -> None:
+    def test_calc_last_quartile(self, test_cases:List[Tuple[RatingsType, float]]) -> None:
         for test_case in test_cases:
             rating: RatingsType
             expected_quartile: float
             rating, expected_quartile = test_case
-            quartile: float = GetRatingLastQuartile().calc_last_quartile(rating)
-            assert pytest.approx(quartile, abs=0.001) == expected_quartile
+            quartil: float = GetRatingLastQuartile().calc_last_quartile(rating)
+            assert pytest.approx(quartil, abs=0.001) == expected_quartile
 
-    def test_print_last_quartile_students(self, test_cases:
-                  List[Tuple[RatingsType, float]]) -> None:
+    def test_print_last_quartile_students(self, test_cases:List[Tuple[RatingsType, float]]) -> None:
         for test_case in test_cases:
             rating: RatingsType
             expected_quartile: float
