@@ -8,6 +8,7 @@ import sys
 
 
 RatingsType = Dict[str, float]
+TestCases = List[Tuple[RatingsType, float]]
 
 
 class TestCalcRating():
@@ -19,7 +20,7 @@ class TestCalcRating():
             ]
         return test_cases
 
-    def test_calc_last_quartile(self, test_cases:List[Tuple[RatingsType, float]]) -> None:
+    def test_calc_last_quartile(self, test_cases: TestCases) -> None:
         for test_case in test_cases:
             rating: RatingsType
             expected_quartile: float
@@ -27,7 +28,7 @@ class TestCalcRating():
             quartil: float = GetRatingLastQuartile().calc_last_quartile(rating)
             assert pytest.approx(quartil, abs=0.001) == expected_quartile
 
-    def test_print_last_quartile_students(self, test_cases:List[Tuple[RatingsType, float]]) -> None:
+    def test_print_last_quartile_students(self, test_cases: TestCases) -> None:
         for test_case in test_cases:
             rating: RatingsType
             expected_quartile: float
