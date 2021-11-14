@@ -39,4 +39,4 @@ class TestCalcRating():
             GetRatingLastQuartile().print_last_quartile_students(rating)
             sys.stdout = old_stdout
             output = mystdout.getvalue()
-            assert output == "d"
+            assert output == "d\n"
