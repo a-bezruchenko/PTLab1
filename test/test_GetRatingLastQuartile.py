@@ -14,7 +14,7 @@ TestCases = List[Tuple[RatingsType, float, str]]
 class TestCalcRating():
     @pytest.fixture()
     def test_cases(self) -> TestCases:
-        test_cases: List[Tuple[RatingsType, float]] = [
+        test_cases: TestCases = [
             ({"a": 1, "b": 2, "c": 3, "d": 4}, 3, 'd'),
             ({"a": 1, "b": 2}, 1.75, 'b')
             ]
@@ -31,7 +31,7 @@ class TestCalcRating():
     def test_print_last_quartile_students(self, test_cases: TestCases) -> None:
         for test_case in test_cases:
             rating: RatingsType
-            expected_quartile: float
+            expected_students: str
             rating, expected_students = test_case[0], test_case[2]
             old_stdout = sys.stdout
             mystdout = StringIO()
