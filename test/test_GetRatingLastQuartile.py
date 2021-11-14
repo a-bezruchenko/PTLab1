@@ -8,7 +8,7 @@ import sys
 
 
 RatingsType = Dict[str, float]
-TestCases = List[Tuple[RatingsType, float]]
+TestCases = List[Tuple[RatingsType, float, str]]
 
 
 class TestCalcRating():
