@@ -3,6 +3,9 @@ from Types import DataType
 from GetRatingLastQuartile import GetRatingLastQuartile
 import pytest
 
+from io import StringIO
+import sys
+
 
 RatingsType = Dict[str, float]
 
@@ -16,11 +19,26 @@ class TestCalcRating():
             ]
         return test_cases
 
-    def test_calc(self, test_cases:
+    def test_calc_last_quartile(self, test_cases:
                   List[Tuple[RatingsType, float]]) -> None:
         for test_case in test_cases:
             rating: RatingsType
             expected_quartile: float
             rating, expected_quartile = test_case
-            quartile: float = GetRatingLastQuartile().calc(rating)
+            quartile: float = GetRatingLastQuartile().calc_last_quartile(rating)
             assert pytest.approx(quartile, abs=0.001) == expected_quartile
+
+    def test_print_last_quartile_students(self, test_cases:
+                  List[Tuple[RatingsType, float]]) -> None:
+        for test_case in test_cases:
+            rating: RatingsType
+            expected_quartile: float
+            rating, expected_quartile = test_case
+            old_stdout = sys.stdout
+            mystdout = StringIO()
+            sys.stdout = mystdout
+            GetRatingLastQuartile().print_last_quartile_students(rating)
+
+            sys.stdout = old_stdout
+            output = mystdout.getvalue(0)
+            assert output == "d"
