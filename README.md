@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/tankistqazwsx/PTLab1.svg?branch=main)](https://app.travis-ci.com/tankistqazwsx/PTLab1)
+![Build Status](https://github.com/tankistqazwsx/PTLab1/actions/workflows/python-publish.yml/badge.svg)
 
 # Лабораторная 1 по дисциплине "Технологии программирования"
 
