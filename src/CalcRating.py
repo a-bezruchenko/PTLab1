@@ -5,7 +5,7 @@ RatingType = Dict[str, float]
 
 
 class CalcRating():
-    def __init__(self, data: DataType) -> None:
+    def __init__(self, data: DataType) -> Nne:
         self.data: DataType = data
         self.rating: RatingType = {}
 
